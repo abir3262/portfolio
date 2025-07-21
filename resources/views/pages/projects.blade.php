@@ -81,28 +81,30 @@
     <div class="projects-container">
 
       <!-- Project 1 -->
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1vbmV5fGVufDB8fDB8fHww" alt="Currency Converter">
+       <div class="project-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStZUsIV_r7blGghXXdQpkATiIQzxEgLQ160A&s" alt="Explore Bangladesh">
         <div class="project-content">
-          <div class="project-title">Currency Converter</div>
-          <div class="project-description">A simple converter app using C language for converting currency units easily.</div>
+          <div class="project-title">Let's Explore Bangladesh</div>
+          <div class="project-description">Tourism-based Laravel website built with HTML, CSS, PHP for exploring Bangladesh.</div>
           <div class="project-buttons">
-            <a href="#">View Code</a>
+            <a href="https://github.com/Pulak5376/Let-s_Explore_Bangladesh">View Code</a>
           </div>
         </div>
       </div>
 
+
       <!-- Project 2 -->
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVkaWNhbHxlbnwwfHwwfHx8MA%3D%3D" alt="Hospital Management System">
+       <div class="project-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXthKGaFFJK5AksLPERbtFSWyk0tfUsgejqA&s" alt="MadeEasy">
         <div class="project-content">
-          <div class="project-title">Hospital Management System</div>
-          <div class="project-description">Built using C, HTML, and MySQL for managing hospital patients and staff data.</div>
+          <div class="project-title">MadeEasy</div>
+          <div class="project-description">A doctor appointment Flutter app with urgent booking and user profile system.</div>
           <div class="project-buttons">
-            <a href="#">View Code</a>
+            <a href="https://github.com/shovo404/madeasy">View Code</a>
           </div>
         </div>
       </div>
+      
 
       <!-- Project 3 -->
       <div class="project-card">
@@ -111,33 +113,42 @@
           <div class="project-title">Medicine Center</div>
           <div class="project-description">Developed using Ubuntu terminal commands for managing medicines efficiently.</div>
           <div class="project-buttons">
-            <a href="#">View Code</a>
+            <a href="https://github.com/abir3262/lab07">View Code</a>
           </div>
         </div>
       </div>
 
       <!-- Project 4 -->
       <div class="project-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXthKGaFFJK5AksLPERbtFSWyk0tfUsgejqA&s" alt="MadeEasy">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVkaWNhbHxlbnwwfHwwfHx8MA%3D%3D" alt="Hospital Management System">
         <div class="project-content">
-          <div class="project-title">MadeEasy</div>
-          <div class="project-description">A doctor appointment Flutter app with urgent booking and user profile system.</div>
+          <div class="project-title">Resturent Management System</div>
+          <div class="project-description">Built using C, HTML, and MySQL for managing clients and staff data.</div>
           <div class="project-buttons">
-            <a href="#">View Code</a>
-            <a href="#">Live Demo</a>
+            <a href="https://github.com/Pulak5376/restaurant_reservation_system1">View Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 5 -->
+      <div class="project-card">
+        <img src="{{ asset('images/drive.jpg') }}" alt="Hospital Management System">
+        <div class="project-content">
+          <div class="project-title">Google Drive</div>
+          <div class="project-description">Google Drive design in Flutter app with folder design and user profile system.</div>
+          <div class="project-buttons">
+            <a href="https://github.com/abir3262/google_drive_design">View Code</a>
           </div>
         </div>
       </div>
 
-      <!-- Project 5 -->
-      <div class="project-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStZUsIV_r7blGghXXdQpkATiIQzxEgLQ160A&s" alt="Explore Bangladesh">
+      <!-- Project 6 -->
+            <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1vbmV5fGVufDB8fDB8fHww" alt="Currency Converter">
         <div class="project-content">
-          <div class="project-title">Let's Explore Bangladesh</div>
-          <div class="project-description">Tourism-based Laravel website built with HTML, CSS, PHP for exploring Bangladesh.</div>
+          <div class="project-title">Currency Converter</div>
+          <div class="project-description">A simple converter app using C language for converting currency units easily.</div>
           <div class="project-buttons">
             <a href="#">View Code</a>
-            <a href="#">Live Site</a>
           </div>
         </div>
       </div>

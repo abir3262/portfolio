@@ -48,12 +48,17 @@
 
 <section class="contact-section">
   <h2>Contact Me</h2>
-  <form action="#" method="POST">
+  @if(session('success'))
+  <p style="color:green">{{ session('success') }}</p>
+@endif
+  <form action="{{ route('contact.store') }}" method="POST">
     @csrf
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="subject" placeholder="Subject">
+    <textarea name="message" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
-  </form>
+</form>
+
 </section>
 @endsection

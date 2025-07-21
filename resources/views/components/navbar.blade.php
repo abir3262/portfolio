@@ -98,6 +98,7 @@
       <li><a href="{{ url('/education') }}">Education</a></li>
       <li><a href="{{ url('/skills') }}">Skills</a></li>
       <li><a href="{{ url('/projects') }}">Projects</a></li>
+      <li><a href="{{ url('achivement') }}">Achivement</a></li>
       <li><a href="{{ url('/resume') }}">Resume</a></li>
       <li><a href="{{ url('/contact') }}">Contact</a></li>
     </ul>
