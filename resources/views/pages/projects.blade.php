@@ -73,86 +73,71 @@
     .project-buttons a:hover {
       background-color: #0056b3;
     }
+
+    .tool-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      margin: 2px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #333;
+    }
+
+    .project-tools {
+      margin: 10px 0;
+    }
+
+    .no-projects {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+      font-size: 18px;
+    }
   </style>
 
   <section class="projects-section">
     <h1>My Projects</h1>
 
+    @if(isset($error))
+        <div class="alert alert-danger">
+            {{ $error }}
+        </div>
+    @endif
+
     <div class="projects-container">
-
-      <!-- Project 1 -->
-       <div class="project-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStZUsIV_r7blGghXXdQpkATiIQzxEgLQ160A&s" alt="Explore Bangladesh">
-        <div class="project-content">
-          <div class="project-title">Let's Explore Bangladesh</div>
-          <div class="project-description">Tourism-based Laravel website built with HTML, CSS, PHP for exploring Bangladesh.</div>
-          <div class="project-buttons">
-            <a href="https://github.com/Pulak5376/Let-s_Explore_Bangladesh">View Code</a>
+      @forelse ($projects as $project)
+        <div class="project-card">
+          <img 
+            src="{{ !empty($project->images) ? $project->images[0] : asset('images/default-project.jpg') }}" 
+            alt="{{ $project->name }}"
+            onerror="this.src='{{ asset('images/default-project.jpg') }}'"
+          >
+          <div class="project-content">
+            <div class="project-title">{{ $project->name }}</div>
+            <div class="project-description">{{ Str::limit($project->description, 150) }}</div>
+            <div class="project-tools">
+              @if(is_array($project->tools))
+                @foreach($project->tools as $tool)
+                  <span class="tool-badge">{{ $tool }}</span>
+                @endforeach
+              @endif
+            </div>
+            <div class="project-buttons">
+              @if($project->github_url)
+                <a href="{{ $project->github_url }}" target="_blank" rel="noopener noreferrer">View Code</a>
+              @endif
+              @if($project->demo_url)
+                <a href="{{ $project->demo_url }}" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              @endif
+            </div>
           </div>
         </div>
-      </div>
-
-
-      <!-- Project 2 -->
-       <div class="project-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXthKGaFFJK5AksLPERbtFSWyk0tfUsgejqA&s" alt="MadeEasy">
-        <div class="project-content">
-          <div class="project-title">MadeEasy</div>
-          <div class="project-description">A doctor appointment Flutter app with urgent booking and user profile system.</div>
-          <div class="project-buttons">
-            <a href="https://github.com/shovo404/madeasy">View Code</a>
-          </div>
+      @empty
+        <div class="no-projects">
+          <p>No projects found.</p>
         </div>
-      </div>
-      
-
-      <!-- Project 3 -->
-      <div class="project-card">
-        <img src="https://plus.unsplash.com/premium_photo-1668487826871-2f2cac23ad56?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVkaWNpbmV8ZW58MHx8MHx8fDA%3D" alt="Medicine Center">
-        <div class="project-content">
-          <div class="project-title">Medicine Center</div>
-          <div class="project-description">Developed using Ubuntu terminal commands for managing medicines efficiently.</div>
-          <div class="project-buttons">
-            <a href="https://github.com/abir3262/lab07">View Code</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVkaWNhbHxlbnwwfHwwfHx8MA%3D%3D" alt="Hospital Management System">
-        <div class="project-content">
-          <div class="project-title">Resturent Management System</div>
-          <div class="project-description">Built using C, HTML, and MySQL for managing clients and staff data.</div>
-          <div class="project-buttons">
-            <a href="https://github.com/Pulak5376/restaurant_reservation_system1">View Code</a>
-          </div>
-        </div>
-      </div>
-      <!-- Project 5 -->
-      <div class="project-card">
-        <img src="{{ asset('images/drive.jpg') }}" alt="Hospital Management System">
-        <div class="project-content">
-          <div class="project-title">Google Drive</div>
-          <div class="project-description">Google Drive design in Flutter app with folder design and user profile system.</div>
-          <div class="project-buttons">
-            <a href="https://github.com/abir3262/google_drive_design">View Code</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6 -->
-            <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1vbmV5fGVufDB8fDB8fHww" alt="Currency Converter">
-        <div class="project-content">
-          <div class="project-title">Currency Converter</div>
-          <div class="project-description">A simple converter app using C language for converting currency units easily.</div>
-          <div class="project-buttons">
-            <a href="#">View Code</a>
-          </div>
-        </div>
-      </div>
-
+      @endforelse
     </div>
   </section>
 @endsection

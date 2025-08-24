@@ -31,14 +31,15 @@
     height: 38px;
     background-color: #00bcd4;
     border-radius: 50%;
-    color: #0c1a2b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 1000;
-    font-size: 30px;
+    overflow: hidden;
     margin-right: 12px;
-    user-select: none;
+    flex-shrink: 0;
+  }
+
+  .logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   /* Navigation menu */
@@ -89,8 +90,10 @@
 <nav class="navbar">
   <div class="container">
     <a href="{{ url('/') }}" class="logo">
-      <div class="logo-circle">A</div>
-      Abir3262
+      <div class="logo-circle">
+        <img src="{{ asset('images/profile_logo.jpg') }}" alt="Abir Hasan">
+      </div>
+      AbirHarz
     </a>
     <ul class="nav-links">
       <li><a href="{{ url('/') }}">Home</a></li>
@@ -98,7 +101,7 @@
       <li><a href="{{ url('/education') }}">Education</a></li>
       <li><a href="{{ url('/skills') }}">Skills</a></li>
       <li><a href="{{ url('/projects') }}">Projects</a></li>
-      <li><a href="{{ url('achivement') }}">Achivement</a></li>
+      <li><a href="{{ url('/achivement') }}">Achivement</a></li>
       <li><a href="{{ url('/resume') }}">Resume</a></li>
       <li><a href="{{ url('/contact') }}">Contact</a></li>
     </ul>

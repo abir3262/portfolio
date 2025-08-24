@@ -44,21 +44,70 @@
     background-color: #00bcd4;
     color: black;
   }
+
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+
+  .error-list {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
 </style>
 
 <section class="contact-section">
   <h2>Contact Me</h2>
   @if(session('success'))
-  <p style="color:green">{{ session('success') }}</p>
-@endif
+    <p style="color:green">{{ session('success') }}</p>
+  @endif
+  @if(session('error'))
+    <p style="color:red">{{ session('error') }}</p>
+  @endif
+  @if($errors->any())
+    <div style="color: red; margin-bottom: 15px;">
+      <ul style="list-style: none; padding: 0;">
+        @foreach($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
   <form action="{{ route('contact.store') }}" method="POST">
     @csrf
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="text" name="subject" placeholder="Subject">
-    <textarea name="message" placeholder="Your Message" required></textarea>
+    <input type="text" 
+           name="name" 
+           placeholder="Your Name" 
+           required 
+           value="{{ old('name') }}">
+    <input type="email" 
+           name="email" 
+           placeholder="Your Email" 
+           required 
+           value="{{ old('email') }}">
+    <input type="text" 
+           name="subject" 
+           placeholder="Subject" 
+           value="{{ old('subject') }}">
+    <textarea name="message" 
+              placeholder="Your Message" 
+              required>{{ old('message') }}</textarea>
     <button type="submit">Send Message</button>
-</form>
+  </form>
 
 </section>
 @endsection
